@@ -15,7 +15,9 @@ class CreateHistoryTable extends Migration
         Schema::create('history', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('type_id')->unsigned()->index('history_type_id_foreign');
+            $table->foreign('type_id')->references('id')->on('history_types')->onUpdate('RESTRICT')->onDelete('CASCADE');
             $table->integer('user_id')->unsigned()->index('history_user_id_foreign');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('CASCADE');
             $table->integer('entity_id')->unsigned()->nullable();
             $table->string('icon', 191)->nullable();
             $table->string('class', 191)->nullable();

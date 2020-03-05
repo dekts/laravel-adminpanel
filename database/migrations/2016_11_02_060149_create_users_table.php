@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('confirmed')->default(0);
             $table->boolean('is_term_accept')->default(0)->comment(' 0 = not accepted,1 = accepted');
             $table->string('remember_token', 100)->nullable();
-            $table->integer('created_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();

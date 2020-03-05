@@ -18,7 +18,7 @@ class CreatePermissionsTable extends Migration
             $table->string('display_name', 191);
             $table->smallInteger('sort')->unsigned()->default(0);
             $table->boolean('status')->default(1);
-            $table->integer('created_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();

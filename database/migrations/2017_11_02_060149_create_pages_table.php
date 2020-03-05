@@ -22,7 +22,7 @@ class CreatePagesTable extends Migration
             $table->string('seo_keyword', 191)->nullable();
             $table->text('seo_description', 65535)->nullable();
             $table->boolean('status')->default(1);
-            $table->integer('created_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
